@@ -8,6 +8,7 @@ const http=require('http')
 const server = http.createServer(app)
 
 const dbconnection = require('./db/db')
+const DataModel = require('./model/dataModel')
 
 server.listen(port,()=>{
     console.log(`listenning ${port}`)
