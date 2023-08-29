@@ -1,0 +1,5 @@
+{
+    "names" : ["Jack","Tonny","Alice","Bob","Harry"],
+    "origins" : ["Bengluru","Pune","Mumbai","Nagpur","Goa"],
+    "destinations" : ["Goa","Bengluru","Nagpur","Pune","Mumbai"]
+}
