@@ -8,6 +8,7 @@ const cors = require('cors')
 const myKey = '123Payal'
 
 app.use(cors());
+app.use(express.json())
 
 // server creation
 const server = http.createServer(app)
@@ -50,6 +51,17 @@ io.on('connection', (socket) => {
         console.log('decryptedMessages : ', decryptedMessages);
     });
 });
+
+app.get('/api/data', async (req, res) => {
+    try {
+        const data = await DataModel.find(); // Fetch data from your database
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 
 // server listening
 server.listen(port, () => {
